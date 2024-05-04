@@ -14,7 +14,10 @@ class EnseignantType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-        ;
+            ->add('email')
+            ->add('age', NumberType::class, [
+                'mapped' => false
+                ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

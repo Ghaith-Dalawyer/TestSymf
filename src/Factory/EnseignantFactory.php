@@ -49,6 +49,7 @@ final class EnseignantFactory extends ModelFactory
         return [
             'nom' => self::faker()->lastname(),
             'prenom' => self::faker()->firstname(),
+            'email' => self::faker()->email(),
         ];
     }
 

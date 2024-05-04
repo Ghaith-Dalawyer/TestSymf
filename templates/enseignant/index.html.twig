@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Prenom</th>
+                <th>Email</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                 <td>{{ enseignant.id }}</td>
                 <td>{{ enseignant.nom }}</td>
                 <td>{{ enseignant.prenom }}</td>
+                <td>{{ enseignant.email }}</td>
                 <td>
                     <a href="{{ path('app_enseignant_show', {'id': enseignant.id}) }}">show</a>
                     <a href="{{ path('app_enseignant_edit', {'id': enseignant.id}) }}">edit</a>
@@ -27,7 +29,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

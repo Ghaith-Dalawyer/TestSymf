@@ -14,6 +14,7 @@ class Enseignant1Type extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
+            ->add('email')
         ;
     }
 

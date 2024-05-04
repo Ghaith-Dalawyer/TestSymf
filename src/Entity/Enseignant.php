@@ -27,6 +27,12 @@ class Enseignant
     #[ORM\OneToMany(targetEntity: Matiere::class, mappedBy: 'id_E')]
     private Collection $matieres;
 
+    #[ORM\Column(length: 40)]
+    private ?string $email = null;
+
+    #[ORM\Column]
+    private ?int $age = null;
+
     public function __construct()
     {
         $this->matieres = new ArrayCollection();
@@ -87,6 +93,30 @@ class Enseignant
                 $matiere->setIdE(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): static
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getAge(): ?int
+    {
+        return $this->age;
+    }
+
+    public function setAge(int $age): static
+    {
+        $this->age = $age;
 
         return $this;
     }
